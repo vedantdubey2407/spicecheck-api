@@ -1,0 +1,6 @@
+upload_to_hf.py
+efficientnet_b3_best.pth
+vgg16_best.pth
+*.pth
+__pycache__/
+.env

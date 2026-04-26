@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: spicecheck-api
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: HF_MODEL_URL
+        value: https://huggingface.co/vedant2407/spicecheck/resolve/main/efficientnet_b3_best.pth
+      - key: HF_CLASSES_URL
+        value: https://huggingface.co/vedant2407/spicecheck/resolve/main/class_names.json
